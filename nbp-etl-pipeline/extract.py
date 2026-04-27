@@ -58,6 +58,8 @@ if __name__ == "__main__":
 
     if data:
         print("\n First 10 currencies: \n")
+
+        # indent - no. of spaces in json output
         print(json.dumps(data[:10], indent=4, ensure_ascii=False))
         print(f"\nNo. of currencies: {len(data)}.\n")
     else:
