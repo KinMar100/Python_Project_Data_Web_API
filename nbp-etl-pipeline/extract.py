@@ -13,8 +13,8 @@ def load_exchange_rates():
     try:
         result_A = requests.get(url_A, timeout=10)
         result_B = requests.get(url_B, timeout=10)
-        print(result_A)
-        print(result_B)
+        print(f"Code HTTP of data A: {result_A}")
+        print(f"Code HTTP of data B: {result_B}")
 
         result_A.raise_for_status()
         result_B.raise_for_status()
@@ -25,7 +25,7 @@ def load_exchange_rates():
         #print(data_json_A)
         #print(data_json_B)
 
-        logging.info("Data loaded.")
+        logging.info("Data loaded.\n")
 
         table_currencies_A = data_json_A[0]["rates"]
         table_currencies_B = data_json_B[0]["rates"]
@@ -57,10 +57,10 @@ if __name__ == "__main__":
     data = load_exchange_rates()
 
     if data:
-        print("\n First 10 currencies: \n")
+        logging.info("First 10 currencies in data: \n")
 
         # indent - no. of spaces in json output
         print(json.dumps(data[:10], indent=4, ensure_ascii=False))
         print(f"\nNo. of currencies: {len(data)}.\n")
     else:
-        print(f"\nData not loading. Check logs above.\n")
+        logging.info(f"\nData not loading. Check logs above.\n")
