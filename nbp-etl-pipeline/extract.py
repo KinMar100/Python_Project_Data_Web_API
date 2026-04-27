@@ -61,6 +61,6 @@ if __name__ == "__main__":
 
         # indent - no. of spaces in json output
         print(json.dumps(data[:10], indent=4, ensure_ascii=False))
-        print(f"\nNo. of currencies: {len(data)}.\n")
+        print(f"\nNumber of currencies: {len(data)}.\n")
     else:
         logging.info(f"\nData not loading. Check logs above.\n")
