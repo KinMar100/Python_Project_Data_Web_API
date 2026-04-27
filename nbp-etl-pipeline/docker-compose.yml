@@ -6,7 +6,7 @@ services:
     container_name: nbp_postgres
     environment:
       POSTGRES_USER: admin
-      POSTGRES_PASSWORD: POSTGRES_PASSWORD
+      POSTGRES_PASSWORD: password
       POSTGRES_DB: nbp_data
     ports:
       - "5432:5432"
